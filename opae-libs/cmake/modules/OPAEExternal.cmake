@@ -62,6 +62,7 @@ macro(opae_external_project_add)
     if(NOT EXISTS ${CMAKE_SOURCE_DIR}/external/${OPAE_EXTERNAL_PROJECT_ADD_PROJECT_NAME} OR NOT ${OPAE_EXTERNAL_PROJECT_ADD_PRESERVE_REPOS})
         execute_process(
             COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+            COMMAND_ECHO STDERR
             RESULT_VARIABLE result
             WORKING_DIRECTORY ${download_dir})
         if(result)
@@ -70,6 +71,7 @@ macro(opae_external_project_add)
 
         execute_process(
             COMMAND ${CMAKE_COMMAND} --build .
+            COMMAND_ECHO STDERR
             RESULT_VARIABLE result
             WORKING_DIRECTORY ${download_dir})
         if(result)

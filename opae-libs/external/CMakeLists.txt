@@ -35,7 +35,7 @@ endif(OPAE_BUILD_TESTS)
 
 if(OPAE_BUILD_SIM)
     opae_external_project_add(PROJECT_NAME opae-sim
-                              GIT_URL https://github.com/OPAE/opae-sim.git
-                              GIT_TAG ${OPAE_SIM_TAG}
+                              GIT_URL https://github.com/mbrobbel/opae-sim.git
+                              GIT_TAG test
                               PRESERVE_REPOS ${OPAE_PRESERVE_REPOS})
 endif(OPAE_BUILD_SIM)
